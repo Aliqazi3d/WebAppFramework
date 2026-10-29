@@ -1,0 +1,16 @@
+@import "tailwindcss";
+/* dark: classes follow the .dark class that next-themes sets */
+@custom-variant dark (&:where(.dark, .dark *));
+/* design tokens */
+@theme {
+  --color-brand: #1b4332;
+  --color-accent: #d4a017;
+  --font-display: Georgia, serif;
+}
+/* reusable pieces */
+@layer components {
+  .btn-primary { @apply bg-brand text-white font-bold py-2 px-4 rounded-lg hover:bg-emerald-800 transition min-h-11 cursor-pointer dark:bg-accent dark:text-black; }
+  .card { @apply bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-4 rounded-xl shadow-md; }
+}
+/* hide menus when printing the voucher */
+@media print { nav, .no-print { display: none; } }
